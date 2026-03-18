@@ -9,10 +9,6 @@ st.set_page_config(page_title="Local ChatGPT Clone", page_icon="🤖", layout="w
 DATA_FILE = Path("chats.json")
 
 
-# -----------------------------
-# Load and Save Chats
-# -----------------------------
-
 def load_chats():
     if DATA_FILE.exists():
         return json.loads(DATA_FILE.read_text())
@@ -21,10 +17,6 @@ def load_chats():
 def save_chats(chats):
     DATA_FILE.write_text(json.dumps(chats, indent=2))
 
-
-# -----------------------------
-# Initialize Chats
-# -----------------------------
 
 chats = load_chats()
 
@@ -39,10 +31,6 @@ if "chat_id" not in st.session_state:
         save_chats(chats)
         st.session_state.chat_id = new_chat
 
-
-# -----------------------------
-# Sidebar (Chat Threads)
-# -----------------------------
 
 st.sidebar.title("💬 Conversations")
 
@@ -90,10 +78,6 @@ if st.sidebar.button("🗑 Delete Current Chat"):
     st.rerun()
 
 
-# -----------------------------
-# Settings
-# -----------------------------
-
 st.sidebar.divider()
 
 model = st.sidebar.selectbox(
@@ -109,16 +93,8 @@ temperature = st.sidebar.slider(
 )
 
 
-# -----------------------------
-# Current Chat
-# -----------------------------
-
 current_chat = chats.get(st.session_state.chat_id, [])
 
-
-# -----------------------------
-# Main Chat UI
-# -----------------------------
 
 st.title("🤖 Local ChatGPT Clone")
 
@@ -127,10 +103,6 @@ for msg in current_chat:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
-
-# -----------------------------
-# User Input
-# -----------------------------
 
 prompt = st.chat_input("Send a message")
 
