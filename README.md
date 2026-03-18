@@ -44,8 +44,8 @@ It supports multiple conversations, real-time streaming responses, and persisten
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/your-username/local-chatgpt-clone.git
-cd local-chatgpt-clone
+git clone https://github.com/AdeelWebAI/Steamlit-Application-using-Local-LLM-Ollama.git
+cd Steamlit-Application-using-Local-LLM-Ollama
 ```
 
 ---
@@ -75,6 +75,7 @@ Install Ollama:
 
 Pull required models:
 
+(You can download only 1 according to you system specifications)
 ```bash
 ollama pull llama3.2:3b
 ollama pull llama3.2:1b
@@ -88,7 +89,7 @@ ollama pull mistral
 
 ```bash
 streamlit run app.py
-```
+``
 
 ---
 
@@ -126,7 +127,7 @@ streamlit run app.py
 
 * 🔍 Chat search
 * 🏷 Rename chats
-* 📤 Export chats (PDF / TXT)
+* 📤 Export chats
 * 🎤 Voice assistant
 * 🌐 Deploy with API fallback
 * 🧠 Long-term memory support
@@ -138,7 +139,6 @@ streamlit run app.py
 * Ollama must be running locally
 * Large models require sufficient RAM
 * `chats.json` grows over time
-
 
 
 ## 👨‍💻 Author
